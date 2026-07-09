@@ -1,0 +1,311 @@
+/* Переменные цветовой палитры под макет */
+:root {
+    --dark-green: #1d251c;
+    /* Глубокий темно-зеленый фон карточек */
+    --main-bg: #404b3d;
+    /* Зеленый фон страницы (приближенный к траве на фото) */
+    --creamy-light: #f5efe4;
+    /* Нежный кремово-бежевый цвет карточек */
+    --text-white: #ffffff;
+    --text-dark: #2b3329;
+    --gold-accent: #d4c3a3;
+    /* Золотисто-бежевый акцент для курсива */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--main-bg);
+    background-image: linear-gradient(rgba(45, 56, 43, 0.4), rgba(45, 56, 43, 0.4)),
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    padding: 40px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.main-wrapper {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+/* Трехколоночная сетка */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Стили карточек */
+.card {
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-card {
+    background-color: var(--dark-green);
+    color: var(--text-white);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light-card {
+    background-color: var(--creamy-light);
+    color: var(--text-dark);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Шрифты и заголовки */
+.script-title {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dark-card .script-title {
+    color: var(--gold-accent);
+}
+
+.main-names {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin: 15px 0 5px;
+}
+
+.main-names span {
+    font-style: italic;
+    font-family: var(--font-serif);
+    color: var(--gold-accent);
+}
+
+.wedding-date-top {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Фотосекция в первой колонке */
+.photo-container {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.main-photo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 280px;
+}
+
+.photo-overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+}
+
+.welcome-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--gold-accent);
+}
+
+.welcome-text p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    font-weight: 300;
+}
+
+/* Календарь */
+.month-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 2rem;
+    margin-top: 25px;
+    color: var(--gold-accent);
+}
+
+.calendar-line {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.calendar-line span {
+    opacity: 0.6;
+}
+
+.calendar-line .marked-day {
+    opacity: 1;
+    font-weight: bold;
+    border-bottom: 2px solid var(--gold-accent);
+    padding-bottom: 2px;
+    color: var(--gold-accent);
+}
+
+/* Программа дня */
+.program-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.timeline-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.timeline-row .time {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: bold;
+    min-width: 50px;
+    color: var(--text-dark);
+}
+
+.timeline-row h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.timeline-row p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Секция: Локация */
+.location-image-box {
+    width: 100%;
+    height: 140px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.location-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gold-text {
+    color: var(--gold-accent);
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+/* Секция: Дресс-код Палитра */
+.center-text {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.palette-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.color-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Колонки/Подпись внизу */
+.footer-card {
+    background-color: var(--creamy-light);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.with-love {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 2.2rem;
+    color: var(--text-dark);
+}
+
+/* Анимация плавного появления при скролле */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* АДАПТИВНОСТЬ ПОД ПЛАНШЕТЫ И ТЕЛЕФОНЫ */
+@media (max-width: 968px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* На планшетах 2 колонки */
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* На мобильных телефонах строго в 1 ряд */
+        gap: 15px;
+    }
+
+    .card {
+        padding: 20px 15px;
+    }
+}
