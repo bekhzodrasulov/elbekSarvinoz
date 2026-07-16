@@ -221,8 +221,16 @@ body {
     margin-bottom: 15px;
 }
 
+.location-info {
+    margin-bottom: 20px;
+}
+
+.pb {
+    padding-bottom: 40px;
+}
+
 .btn {
-    margin-top: 30px;
+    margin-top: 50px;
     text-decoration: none;
     padding: 10px 60px;
     border: 4px solid var(--dark-green);
